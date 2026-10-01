@@ -9,7 +9,7 @@ def string_tokenization(math_exp):
     for i in range(len(math_exp)):
         if len(substring) == 0:
             substring += math_exp[i]
-        elif math_exp[i] in digits or math_exp[i] in point:
+        elif math_exp[i] in digits + point:
             substring += math_exp[i]
         else:
             tokens.append(substring)
