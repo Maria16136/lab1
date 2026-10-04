@@ -24,12 +24,15 @@ def main():
 
     args = parser.parse_args(arguments)
 
-    if args.command == 'calc':
-        result = calc(args.math_expression)
-    elif args.command == 'convert':
-        result = convert(args.value, args.unit_from, args.unit_to)
-
-    print(result)
+    try:
+        if args.command == 'calc':
+            result = calc(args.math_expression)
+        elif args.command == 'convert':
+            result = convert(args.value, args.unit_from, args.unit_to)
+        print(result)
+    except Exception as error:
+        print(error)
+        sys.exit(2)
 
 
 if __name__ == '__main__':

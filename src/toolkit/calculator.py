@@ -43,8 +43,8 @@ def binary_operation(number_1, operation, number_2):
 def calc(math_expression):
     tokens = string_tokenization(math_expression)
     verified_tokens = validation(tokens)
-    math_exp = postfix_entry(tokens)
     if verified_tokens:
+        math_exp = postfix_entry(tokens)
         i = 0
         while len(math_exp) > 1:
             if str(math_exp[i]) in operation_symbols:
@@ -56,4 +56,4 @@ def calc(math_expression):
                 i += 1
         return math_exp
     else:
-        return 'Введено некорректное выражение'
+        raise ValueError('Введено некорректное выражение')

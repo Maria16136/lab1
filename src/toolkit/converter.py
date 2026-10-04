@@ -47,4 +47,4 @@ def convert(value, unit_from, unit_to):
     if len(str(result)) > 0:
         return result
     else:
-        return False
+        raise ValueError('Введено некорректное выражение')
