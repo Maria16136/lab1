@@ -1,5 +1,4 @@
-from src.constants import digits
-from src.constants import point
+from src.constants import DIGITS, POINT
 
 
 def string_tokenization(math_exp):
@@ -7,13 +6,11 @@ def string_tokenization(math_exp):
     tokens = []
     substring = ''
     for i in range(len(math_exp)):
-        if len(substring) == 0:
-            substring += math_exp[i]
-        elif math_exp[i] in digits + point:
+        if len(substring) == 0 or math_exp[i] in DIGITS + POINT:
             substring += math_exp[i]
         else:
             tokens.append(substring)
-            if substring[-1] in digits:
+            if substring[-1] in DIGITS:
                 tokens.append(math_exp[i])
                 substring = ''
             else:
@@ -21,6 +18,3 @@ def string_tokenization(math_exp):
         if i + 1 == len(math_exp):
             tokens.append(substring)
     return tokens
-
-
-

@@ -1,14 +1,16 @@
-digits = '0123456789'
-point = '.'
-unary_operators = '+-'
-operation_symbols = '+-*/'
+# for calculator
+DIGITS = '0123456789'
+POINT = '.'
+UNARY_OPERATORS = '+-'
+OPERATION_SYMBOLS = '+-*/'
 
-length = ['mm', 'cm', 'm', 'km']
-weight = ['g', 'kg']
-temperature = ['c', 'k', 'f']
-g_to_kg_scale = 1000
-kelvin_offset = 273.15
-c_to_f_scale = 1.8
-fahrenheit_offset = 32
-abs_zero_fahrenheit = -459.67
-abs_zero_kelvin = 0
+# for converter
+LENGTH = ['mm', 'cm', 'm', 'km']
+WEIGHT = ['g', 'kg']
+TEMPERATURE = ['c', 'k', 'f']
+G_TO_KG_SCALE = 1000
+KELVIN_OFFSET = 273.15
+C_TO_F_SCALE = 1.8
+FAHRENHEIT_OFFSET = 32
+ABS_ZERO_FAHRENHEIT = -459.67
+ABS_ZERO_KELVIN = 0

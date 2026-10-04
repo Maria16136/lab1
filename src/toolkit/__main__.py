@@ -1,5 +1,6 @@
 import argparse
 import sys
+
 from .calculator import calc
 from .converter import convert
 
@@ -19,7 +20,7 @@ def main():
 
     arguments = sys.argv[1:]
 
-    if arguments[0] == 'calc' and arguments[1].startswith('-'):
+    if len(arguments) > 1 and arguments[0] == 'calc' and arguments[1].startswith('-'):
         arguments.insert(1, '--')
 
     args = parser.parse_args(arguments)
@@ -30,7 +31,7 @@ def main():
         elif args.command == 'convert':
             result = convert(args.value, args.unit_from, args.unit_to)
         print(result)
-    except Exception as error:
+    except ValueError as error:
         print(error)
         sys.exit(2)
 
