@@ -1,4 +1,4 @@
-from validator import corr_numb
+from .validator import corr_numb
 from src.constants import (
     length, weight, temperature, g_to_kg_scale, kelvin_offset, c_to_f_scale,
     fahrenheit_offset, abs_zero_fahrenheit, abs_zero_kelvin

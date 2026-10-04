@@ -1,5 +1,5 @@
-from tokenizer import string_tokenization
-from validator import validation
+from .tokenizer import string_tokenization
+from .validator import validation
 
 from src.constants import digits
 from src.constants import operation_symbols
@@ -40,13 +40,14 @@ def binary_operation(number_1, operation, number_2):
         return float(number_1) / float(number_2)
 
 
-def calc(math_exp):
-    tokens = string_tokenization(math_exp)
+def calc(math_expression):
+    tokens = string_tokenization(math_expression)
     verified_tokens = validation(tokens)
+    math_exp = postfix_entry(tokens)
     if verified_tokens:
         i = 0
         while len(math_exp) > 1:
-            if math_exp[i] in operation_symbols:
+            if str(math_exp[i]) in operation_symbols:
                 math_exp[i] = binary_operation(math_exp[i - 2], math_exp[i], math_exp[i - 1])
                 del math_exp[i - 1]
                 del math_exp[i - 2]
