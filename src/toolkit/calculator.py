@@ -40,7 +40,7 @@ def binary_operation(number_1, operation, number_2):
         return float(number_1) / float(number_2)
 
 
-def calculate(math_exp):
+def calc(math_exp):
     tokens = string_tokenization(math_exp)
     verified_tokens = validation(tokens)
     if verified_tokens:
@@ -55,4 +55,4 @@ def calculate(math_exp):
                 i += 1
         return math_exp
     else:
-        return 'Введено некорректное выражение' .
+        return 'Введено некорректное выражение'
