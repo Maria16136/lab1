@@ -20,8 +20,9 @@ def postfix_entry(tokens):
         elif not operations or operation_priority(token) > operation_priority(operations[-1]):
             operations.append(token)
         else:
-            result.append(operations[-1])
-            del operations[-1]
+            while operations and operation_priority(token) <= operation_priority(operations[-1]):
+                result.append(operations[-1])
+                del operations[-1]
             operations.append(token)
     return result + operations[::-1]
 
