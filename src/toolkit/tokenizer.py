@@ -1,7 +1,7 @@
 from src.constants import DIGITS, POINT
 
 
-def string_tokenization(math_exp):
+def string_tokenization(math_exp: str) -> list:
     math_exp = ''.join(math_exp.split(' '))
     tokens = []
     substring = ''

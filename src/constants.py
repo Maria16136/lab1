@@ -4,6 +4,7 @@ POINT = '.'
 UNARY_OPERATORS = '+-'
 OPERATION_SYMBOLS = '+-*/'
 
+
 # for converter
 LENGTH = ['mm', 'cm', 'm', 'km']
 WEIGHT = ['g', 'kg']

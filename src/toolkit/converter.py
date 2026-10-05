@@ -13,7 +13,7 @@ from src.constants import (
 from .validator import corr_numb
 
 
-def convert(value, unit_from, unit_to):
+def convert(value: str, unit_from: str, unit_to: str) -> float:
     unit_from = unit_from.lower()
     unit_to = unit_to.lower()
     result = ''

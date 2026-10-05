@@ -1,7 +1,7 @@
 from src.constants import DIGITS, OPERATION_SYMBOLS, UNARY_OPERATORS
 
 
-def corr_numb(token):
+def corr_numb(token: str) -> bool:
     if token == '+0' or token == '-0':
         token = '0'
     if not token:
@@ -27,11 +27,11 @@ def corr_numb(token):
                 or (all(symb in DIGITS for symb in token) and token[0] != '0')
 
 
-def corr_sign(token):
+def corr_sign(token: str) -> bool:
     return len(token) == 1 and token in OPERATION_SYMBOLS
 
 
-def validation(tokens):
+def validation(tokens: list) -> bool:
     if len(tokens) == 0 or not corr_numb(tokens[0]) or not corr_numb(tokens[-1]):
         return False
     else:
